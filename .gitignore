@@ -1,0 +1,4 @@
+venv
+.idea
+captcha/__pycache__/
+__pycache__/

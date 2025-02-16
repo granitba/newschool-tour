@@ -1,0 +1,17 @@
+{
+    "showForm_url": "https://service2.diplo.de/rktermin/extern/appointment_showForm.do?locationCode=kara&realmId=771&categoryId=1416&dateStr=31.03.2025&openingPeriodId=66352",
+    "showForm_url_post": "https://service2.diplo.de/rktermin/extern/appointment_showForm.do",
+    "openingPeriodId": "66352",
+    "date": "31.03.2025",
+    "dateStr": "31.03.2025",
+    "captcha_ip": "213.173.111.69",
+    "captcha_port": "29204",
+    "post_time": "22:59:25",
+    "get_time": "23:00:00",
+    "num_process_per_core": 1,
+    "num_passports": 4,
+    "log_server_ip" : "138.199.200.248",
+    "log_server_port" : "12201",
+    "delay_captcha": 3.78,
+    "delay_form": 3.48
+}

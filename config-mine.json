@@ -1,0 +1,17 @@
+{
+    "showForm_url": "https://service2.diplo.de/rktermin/extern/appointment_showForm.do?locationCode=pris&realmId=362&categoryId=590&dateStr=20.12.2024&openingPeriodId=29188",
+    "showForm_url_post": "https://service2.diplo.de/rktermin/extern/appointment_showForm.do",
+    "openingPeriodId": "29188",
+    "date": "20.12.2024",
+    "dateStr": "20.12.2024",
+    "captcha_ip": "213.173.98.107",
+    "captcha_port": "15010",
+    "post_time": "21:59:10",
+    "get_time": "22:00:00",
+    "form_post_time": "22:00:03.500",
+    "num_process_per_core": 1.5,
+    "num_passports": 4,
+    "log_server_ip" : "51.89.226.46",
+    "log_server_port" : "12201",
+    "delay": 3.78,
+}

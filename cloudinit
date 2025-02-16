@@ -1,0 +1,41 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+packages:
+  - git
+  - python3-pip
+  - libgl1
+  - libglx-mesa0
+
+write_files:
+  - path: /var/lib/cloud/scripts/per-instance/startup.sh
+    permissions: '0755'
+    owner: root:root
+    content: |
+      #!/bin/bash
+      # Determine the home directory for the non-root user
+      HOME_DIR=$(getent passwd 1000 | cut -d: -f6)
+      if [ -z "$HOME_DIR" ]; then
+          HOME_DIR="$HOME"
+      fi
+      cd "$HOME_DIR"
+      # Clone the repository if not already present
+      if [ ! -d "newschool-tour" ]; then
+          git clone https://github.com/granitba/newschool-tour.git
+      fi
+      cd newschool-tour
+      # Create a Python 3.9 virtual environment
+      python3.9 -m venv venv
+      . venv/bin/activate
+      pip install --upgrade pip
+      pip install -r req.txt
+      # Run main_rand.py in background and redirect output to a log file
+      nohup python3.9 main_rand.py > "$HOME_DIR/main_rand.log" 2>&1 &
+
+runcmd:
+  - apt-get update
+  - apt-get install -y software-properties-common
+  - add-apt-repository ppa:deadsnakes/ppa -y
+  - apt-get update
+  - apt-get install -y python3.9 python3.9-venv
+  - sudo /var/lib/cloud/scripts/per-instance/startup.sh
